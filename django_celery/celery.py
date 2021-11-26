@@ -19,6 +19,10 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'creating-new-objects': {
         'task': 'myapp.tasks.create_new_object',
-        'schedule': 15.0
+        'schedule': 10.0
+    },
+    'removing-old-objects': {
+        'task': 'myapp.tasks.cleaning_up',
+        'schedule': 10.0
     }
 }
